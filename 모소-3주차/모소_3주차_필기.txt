@@ -1,0 +1,17 @@
+LOCATiONS
+
+1. COARSE : 비교적 정확하지 않음 / FINE : 정확한 위치 불러옴
+	fine 이 항상 가능한 것이 아니니까 COARSE도 존재함
+2. LocationRequest : 지도 하나에 위치를 옮겨도 반복적으로 위치 파악할 수 있도록 
+			반복되는 위치 설정 해줘야함
+3. setFastestInterval : UI flicker, data overflow등의 부작용을 막는 선에서 최대 빨리 받을 수 있는 주기 설정 
+
+CAMERA
+1. use permssion 에서 permission 물어보는 기능 미리 해줘야함
+2. Camera 클래스에서 open 하고 객체 선언
+3. id => 0 : 후면카메라, 1: 전면카메라 
+4. releaseCameraAndPreview() : 원래 있던 카메라 release 해줌
+5. surfaceView에 그림 그리려면 surfaceCreated 클래스에 있는 startPreview 를 써주면 된다.
+6. surfaceChanged 에서는 중간에 카메라 설정을 바꿀 때 쓰는것
+	이때 stopPreview 먼저 하고 새로 셋팅 한다음 startPreview를 해줘야 함
+7. 

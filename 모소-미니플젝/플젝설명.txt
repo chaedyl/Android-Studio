@@ -1,0 +1,92 @@
+<모소 MINI PROJECT>
+탭 3개
+> navigation templete
+> layout 잡아서 해도됨
+
+첫번째탭
+- 리스트
+> 앞에있는 사진, 내용, 제목
+> 사진찍고, 제목 입력하고, 있었던 일 적기
+> 지도에 마커 찍어서 그 위치 같이 저장
+> 저장한 내용은 지도, 리스트에 보여주기
+> 리스트 클릭하면 상세보기 페이지로
+> 마커 클릭해도 상세보기 페이지로
+intent로 넘겨주기?
+
+> 상세보기 페이지에 지도, 제목, 내용
+버튼 두개 만들어서 share
+사진은 공유안하고, text와 내용 공유
+현재 위치에 대한 주소 얻어서 공유
+geocoder 이용해서 getlongitude, getlatitude 를 주소로 변경해서 공유하면 됨
+카카오링크 위치 템플릿 사용
+카카오링크 테스트는 국내에 좌표 찍고 테스트해야함
++ 버튼을 누르면, 첫화면(?) 뜸
+> 마커좌표, 제목, 내용, 사진 최소 4가지 추가해야함
+
+> 사진 얻는 방법 (camera or intent)
+> full size 사진 얻기 위해서 intent 사용
+> alertdialog 로 카메라 / 갤러리 선택 가능
+
+
+https://riptutorial.com/ko/android/example/12253/%EC%B9%B4%EB%A9%94%EB%9D%BC%EC%97%90%EC%84%9C-%EC%A0%84%EC%B2%B4-%ED%81%AC%EA%B8%B0-%EC%82%AC%EC%A7%84-%EC%B0%8D%EA%B8%B0
+
+> 새로 등록한 컨텐츠는 영구저장하도록
+Room API 추천
+
+마지막 탭
+> 저장된 데이터 표현
+ex 사진첩처럼 그리드 추가
+전체 데이터를 한번에 볼 수 있는 UI 넣기
+
+참고> activity 간 class object 전달하기
+
+
+구글 > material icon > 아이콘 사용 가능
+
+<리스트뷰>
+1. xml에 <ListView> 추가
+2. mainactivity.java에 어댑터 만들어줘야함.
+어댑터 : getcount
+어댑터를 리스트뷰에 st 해주면 getcount를 통해서 몇개 리스트 추가하는지 암
+getview 호출해서 view 만들어주고, return
+이렇게 return 된 값을 바탕으로 리스트뷰에 출력해주는것
+
+List<String> texts = new ArrayList<String>()
+
+
+class TextAdapter extends BaseAdapter(){
+generate 해서 4개의 함수 만들어줌
+
+getCount(){
+return texts.size();
+}
+
+getItem
+return texts.get(position)
+
+getItemId
+teturn position;
+
+getView
+getLayoutInflater().inflate(android.R.layout.simple_list_item_1 )
+또는 layoutresourcefile.xml 만들어서 
+
+textView.setText(texts.get(position));
+
+
+OnCreate
+
+ListView listview = findViewById(R.id.listView)
+TextAdapter textAdapter =new TextAdapter();
+listView.setAdapter(textAdapter);
+// 리스트뷰 클릭됐을때
+listView.setOnItemClickListener()
+@override 함수 안에
+Lod.d(" ",texts.get(position));
+
+
+
+
+
+
+

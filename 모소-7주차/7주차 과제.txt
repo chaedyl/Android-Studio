@@ -1,0 +1,56 @@
+모소 과제
+-강노 p.9 코드 분석
+-viewport transport =>p.11
+-OnSurfaceCreated : SDK 초기화,
+-OnSurfacechanged:orientation , display 바뀔 때 / 따로수정안하면 한번만 호출
+-onDrawFrame : Draw 함수 호출해서 계속해서 draw
+
+어느 단계에서 초기화 하고 어떤 리소스를 받아올것인가
+
+translatef
+카메라 움직인게아니라 로컬 좌표계 자체를 이동한것
+
+rotatef
+회전
+
+draw(gl)
+gl은 초기화했던 obj
+
+p19 
+setZOrderOnTop
+기존에 있던 레이아웃의 view를 다 무시하고 surfaceView를 최상위로 하겠다.
+
+rotation 
+처음에 회전하고 있으면 멈추기
+
+change 
+두개 이상 object할 때 25쪽 확인
+onsurfacecreate에서 꼭 할 필요 없음
+버튼 눌렀을 때 새롭게 인스턴스 할당하거나
+기존에 할당했던 거를 바꿔줌
+두세개정도 하면 Ok
+
+
+texture가 없는 obj 파일 
+null 로 반드시 하고 colorset 해주면됨
+color로만 rendering 하고 싶을때
+
+
+
+---------------------------------------------------------------
+button 누르면 object가 바뀔 수 있게
+renderer classs 안에 있는 버튼 구현
+확대, 축소 되는 부분에서 scaling 어떻게 구현할것인지
+
+화면 녹화 app 다운 받기
+Parser 부분은 코드 고찰 하지말고
+MainActivity, ObjParserRenderer 부분만 코드 고찰
+
+*** objRenderor.java 에서
+int group => 몇개의 obj 파일이 있는지 확인해야
+texture로 바인딩할 수 있음!! 
+
+
+
+blender
+Free 3D

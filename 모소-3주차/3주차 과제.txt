@@ -1,0 +1,28 @@
+Context context
+= Activity이름.this
+
+<sensor>
+sensormanager 객체를 얻어와서 getsensorlist() 메소드를 통해서 sensor 객체의 list를 얻어온다.
+
+list 에 들어온 각 sensor 객체에서는 getname()으로 sensor 이름을 출력할 수 있다.
+
+https://m.blog.naver.com/PostView.nhn?blogId=jinhyuk2174&logNo=220019194278&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+
+<location>
+가장 먼저 manifest 에 permission 추가
+그 후 checkSelfPermission으로 권한 확인 후
+권한이 없는 경우에는requestPermissions로 권한을 요청한다.
+그리고 onRequestPermissionsresult에서 권한 요청에 대한 결과를 받아서 판단해야한다.
+
+onResume() 에서 수시로 권한 체크
+
+https://bottlecok.tistory.com/54
+
+
+<모소 과제>
+1. 센서사용
+강노에 센서 목록 받아오는 코드 (21)
+getname 함수 로 센서 이름 얻어오기
+
+2. 카메라
+camera, storage permission

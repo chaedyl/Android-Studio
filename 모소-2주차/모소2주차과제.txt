@@ -1,0 +1,32 @@
+<모소 2주차 과제 정리>
+
+1. ListFragment.java 
+
+리스너 인터페이스
+AdapterView.OnItemClickListener mCallback
+
+ListAdapter
+: 데이터를 adapter를 거쳐 listview의 각 position 에 뿌려준다.
+adapter는 listview에 데이터를 넣어주는 중계 역할
+
+-fragment 는 id 써줘야함
+(xml Text 에서)
+-mainavtivity.java 에 implements 추가해줘야함
+
+-fragment 끼리 통ㅇ신
+fragment 에서 event 발생
+main activity에 알려줌
+main activity가 interface 구현, callback 함수 호출
+----------------------------
+2개의 플레그먼트
+(목록, 상세내용)
+플레그먼트끼리 통신
+(목록 클릭하면 상세내용-텍스트 출력)
+
+-Util 을 이용해서 csv 파일 읽어오기
+-OnItemClickListner
+mCallback 변수 만들어둠
+
+MainActivity에 onItemCallback 구현
+
+context. 해서 호출 Listview=>getView 함수 구현
